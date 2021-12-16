@@ -5,7 +5,7 @@ const cartTable = document.querySelector(".shoppingCart-tableList");
 const form = document.querySelector(".orderInfo-form");
 
 function init() {
-  //getProduct();
+  getProduct();
   getCart();
 }
 
