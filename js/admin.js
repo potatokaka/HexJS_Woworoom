@@ -139,7 +139,7 @@ function editOrder() {
     const orderItem = orderData.find((item) => {
       return (item.id = id);
     });
-    console.log(orderItem);
+    // console.log(orderItem);
 
     const productObj = {
       data: {
