@@ -381,8 +381,8 @@ const constraints = {
     },
     numericality: {
       onlyInteger: true,
-      greaterThanOrEqualTo: 8,
-      lessThanOrEqualTo: 10,
+      // greaterThanOrEqualTo: 8,
+      // lessThanOrEqualTo: 10,
       message: "必須符合 8-10字數",
     },
     format: {

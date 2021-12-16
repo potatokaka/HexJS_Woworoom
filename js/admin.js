@@ -133,13 +133,14 @@ function deleteOrder() {
 function editOrder() {
   orderTable.addEventListener("click", function (e) {
     e.preventDefault();
+    console.log(e.target);
     const id = e.target.dataset.id;
 
     // 依點選到的 id ，找出該筆訂單資料
     const orderItem = orderData.find((item) => {
-      return (item.id = id);
+      return item.id == id;
     });
-    // console.log(orderItem);
+    console.log(orderItem);
 
     const productObj = {
       data: {
@@ -160,6 +161,7 @@ function editOrder() {
         })
         .then((response) => {
           getOrder();
+          console.log("ooooo");
         })
         .catch((error) => {
           console.log(error.response.data);
