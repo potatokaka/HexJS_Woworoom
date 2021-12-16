@@ -5,7 +5,7 @@ const cartTable = document.querySelector(".shoppingCart-tableList");
 const form = document.querySelector(".orderInfo-form");
 
 function init() {
-  getProduct();
+  //getProduct();
   getCart();
 }
 
@@ -46,6 +46,24 @@ function renderProduct(data) {
   productList.innerHTML = str;
 }
 
+// 動態抓下拉選單的類別
+function getSelectCategory() {
+  // 連續陣列方法, 整理出不重覆的產品類別
+  const productCategory = productData
+    .map((item) => item.category)
+    .filter((item, index, arr) => arr.indexOf(item) == index);
+  //console.log(productCategory); //['床架', '收納', '窗簾']
+
+  let str = `<option value="全部" selected>全部</option>`;
+  productCategory.forEach((item) => {
+    str += `
+      <option value="${item}">${item}</option>
+    `;
+  });
+
+  productSelect.innerHTML = str;
+}
+
 // 篩選產品
 const productSelect = document.querySelector(".productSelect");
 
@@ -69,6 +87,7 @@ function getCart() {
     .then((response) => {
       cartData = response.data;
       renderCart(cartData);
+      getSelectCategory();
       deleteAllOrder();
       deleteOrder();
       patchProduct();

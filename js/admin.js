@@ -140,7 +140,7 @@ function editOrder() {
     const orderItem = orderData.find((item) => {
       return item.id == id;
     });
-    console.log(orderItem);
+    //console.log(orderItem);
 
     const productObj = {
       data: {
@@ -148,7 +148,7 @@ function editOrder() {
         paid: orderItem.paid ? false : true,
       },
     };
-    console.log(productObj);
+    //console.log(productObj);
 
     if (!e.target.classList.contains("js-edit")) {
       return;
@@ -161,7 +161,6 @@ function editOrder() {
         })
         .then((response) => {
           getOrder();
-          console.log("ooooo");
         })
         .catch((error) => {
           console.log(error.response.data);
