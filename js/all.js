@@ -378,13 +378,16 @@ const constraints = {
   電話: {
     presence: {
       message: "為必填欄位",
-      duration: {
-        onlyInteger: true,
-        minimum: 8,
-        greaterThanOrEqualTo: 8,
-        lessThanOrEqualTo: 10,
-        message: "必須符合 8-10字數",
-      },
+    },
+    numericality: {
+      onlyInteger: true,
+      greaterThanOrEqualTo: 8,
+      lessThanOrEqualTo: 10,
+      message: "必須符合 8-10字數",
+    },
+    format: {
+      pattern: /^0(9)\d{8}$/,
+      message: "格式錯誤",
     },
   },
   Email: {

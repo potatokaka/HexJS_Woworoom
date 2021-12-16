@@ -139,13 +139,15 @@ function editOrder() {
     const orderItem = orderData.find((item) => {
       return (item.id = id);
     });
+    console.log(orderItem);
 
     const productObj = {
       data: {
         id: `${id}`,
-        paid: !orderItem.paid,
+        paid: orderItem.paid ? false : true,
       },
     };
+    console.log(productObj);
 
     if (!e.target.classList.contains("js-edit")) {
       return;
@@ -227,7 +229,7 @@ function renderChart() {
       });
       c3Arr.splice(3);
       c3Arr.push(["其他", otherAmount]);
-      console.log(c3Arr);
+      //console.log(c3Arr);
     }
 
     let chart = c3.generate({
