@@ -17,7 +17,7 @@ function getOrder() {
       renderChart();
     })
     .catch((error) => {
-      // console.log(error.response.data);
+      console.log(error.response.data);
     });
 }
 
@@ -133,7 +133,7 @@ function deleteOrder() {
 function editOrder() {
   orderTable.addEventListener("click", function (e) {
     e.preventDefault();
-    console.log(e.target);
+    // console.log(e.target);
     const id = e.target.dataset.id;
 
     // 依點選到的 id ，找出該筆訂單資料

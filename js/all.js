@@ -91,7 +91,7 @@ function getCart() {
       deleteAllOrder();
       deleteOrder();
       patchProduct();
-      //createOrder(); // 為什麼不能放裡面？
+      // createOrder(); // 為什麼不能放裡面？
     })
     .catch((error) => {
       // console.log(error.response.data);
